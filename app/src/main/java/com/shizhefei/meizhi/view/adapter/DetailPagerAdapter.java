@@ -14,6 +14,7 @@ import com.shizhefei.mvc.IDataAdapter;
 import com.shizhefei.utils.ArrayListMap;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetailPagerAdapter extends IndicatorViewPager.IndicatorViewPagerAdapter implements IDataAdapter<ArrayListMap<String, List<Gank>>> {
@@ -30,7 +31,7 @@ public class DetailPagerAdapter extends IndicatorViewPager.IndicatorViewPagerAda
             convertView = LayoutInflater.from(container.getContext()).inflate(R.layout.tab_top, container, false);
         }
         TextView textView = (TextView) convertView;
-        textView.setText(data.keyAt(position));
+        textView.setText(data.keyAt(position).trim());
         return convertView;
     }
 
@@ -56,6 +57,8 @@ public class DetailPagerAdapter extends IndicatorViewPager.IndicatorViewPagerAda
         data.putAll(stringListArrayListMap);
         notifyDataSetChanged();
     }
+
+    private static int a;
 
     @Override
     public ArrayListMap<String, List<Gank>> getData() {

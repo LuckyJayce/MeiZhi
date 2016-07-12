@@ -87,6 +87,7 @@ public class DetailActivity extends BaseActivity {
         collapsingToolbarLayout.setTitle(meizhi.desc);
 
 
+        indicator.setSplitAuto(false);
         indicator.setScrollBar(new ColorBar(getApplicationContext(), getResources().getColor(R.color.primary), DisplayUtils.dipToPix(
                 getApplicationContext(), 2)));
         OnTransitionTextListener onTransitionTextListener = new OnTransitionTextListener();

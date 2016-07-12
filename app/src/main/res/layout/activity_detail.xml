@@ -57,7 +57,7 @@
 
             <com.shizhefei.view.indicator.ScrollIndicatorView
                 android:id="@+id/detail_indicator"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="42dp" />
 
             <View style="@style/divider" />
