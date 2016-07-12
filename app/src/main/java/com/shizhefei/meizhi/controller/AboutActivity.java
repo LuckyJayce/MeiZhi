@@ -67,7 +67,7 @@ public class AboutActivity extends BaseActivity {
             if (v == githubButton) {
                 String url = getString(R.string.url_github_luckyjayce);
                 String name = getString(R.string.luckyjayce);
-                WebViewActivity.startWeb(getApplicationContext(), url, name);
+                WebViewActivity.startWeb(getApplicationContext(), name, url);
             }
         }
     };
