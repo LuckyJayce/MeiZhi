@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_main_github_login"
+        android:orderInCategory="1"
+        android:title="@string/menu_github_login"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_main_github_hot"
+        android:orderInCategory="2"
+        android:title="@string/menu_github_hot"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_main_about"
+        android:orderInCategory="3"
+        android:title="@string/menu_github_about"
+        app:showAsAction="never" />
+
+
+</menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <item
+        android:id="@+id/menu_web_refresh"
+        android:icon="@drawable/iconfont_refresh"
+        android:orderInCategory="100"
+        android:title="@string/refresh"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_web_share"
+        android:icon="@drawable/iconfont_share"
+        android:orderInCategory="90"
+        android:title="@string/share"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/menu_web_copy"
+        android:icon="@drawable/abc_ic_menu_copy_mtrl_am_alpha"
+        android:orderInCategory="90"
+        android:title="复制网址"
+        app:showAsAction="never"/>
+
+</menu>
