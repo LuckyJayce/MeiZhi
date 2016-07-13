@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.shizhefei.meizhi.R;
 import com.shizhefei.meizhi.controller.common.BaseActivity;
@@ -21,7 +22,7 @@ import com.shizhefei.meizhi.modle.datasource.GankDatasource;
 import com.shizhefei.meizhi.modle.entry.Gank;
 import com.shizhefei.meizhi.modle.entry.Meizhi;
 import com.shizhefei.meizhi.utils.DisplayUtils;
-import com.shizhefei.meizhi.utils.ImageUtils;
+import com.shizhefei.meizhi.utils.ImageViewAutoHeightListener;
 import com.shizhefei.meizhi.view.LoadView;
 import com.shizhefei.meizhi.view.adapter.DetailPagerAdapter;
 import com.shizhefei.mvc.MVCNormalHelper;
@@ -80,10 +81,14 @@ public class DetailActivity extends BaseActivity {
             ViewGroup.LayoutParams layoutParams = meizhiImageView.getLayoutParams();
             layoutParams.height = h;
             meizhiImageView.setLayoutParams(layoutParams);
+        } else {
+            ViewGroup.LayoutParams layoutParams = meizhiImageView.getLayoutParams();
+            layoutParams.height = maxHeight;
+            meizhiImageView.setLayoutParams(layoutParams);
         }
 
         ViewCompat.setTransitionName(meizhiImageView, TRANSIT_PIC);
-        ImageUtils.displayAutoHeight(meizhiImageView, meizhi.url, maxHeight);
+        Glide.with(this).load(meizhi.url).dontAnimate().listener(new ImageViewAutoHeightListener(meizhiImageView, maxHeight)).into(meizhiImageView);
         collapsingToolbarLayout.setTitle(meizhi.desc);
 
 

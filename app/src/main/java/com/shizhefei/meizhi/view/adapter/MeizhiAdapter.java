@@ -4,8 +4,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.shizhefei.meizhi.R;
-import com.shizhefei.meizhi.utils.ImageUtils;
 import com.shizhefei.meizhi.modle.entry.Meizhi;
 import com.shizhefei.meizhi.view.RatioImageView;
 
@@ -36,7 +36,7 @@ public class MeizhiAdapter extends ListDataAdapter<Meizhi> {
             String text = meizhi.desc.length() > limit ? meizhi.desc.substring(0, limit) +
                     "..." : meizhi.desc;
             textView.setText(text);
-            ImageUtils.display(imageView, meizhi.url);
+            Glide.with(context).load(meizhi.url).into(imageView);
         }
     }
 }
