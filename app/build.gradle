@@ -25,6 +25,7 @@ dependencies {
     compile rootProject.ext.dependencies["appcompat-v7"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
     compile rootProject.ext.dependencies["design"]
+    compile rootProject.ext.dependencies["glide"]
     compile rootProject.ext.dependencies["gson"]
     compile rootProject.ext.dependencies["mvchelper-core"]
     compile rootProject.ext.dependencies["mvchelper-swipe"]

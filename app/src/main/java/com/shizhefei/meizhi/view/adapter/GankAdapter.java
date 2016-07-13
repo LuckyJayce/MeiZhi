@@ -3,6 +3,7 @@ package com.shizhefei.meizhi.view.adapter;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +43,10 @@ public class GankAdapter extends ListDataAdapter<Gank> {
         @Override
         public void setData(Gank gank, int position) {
             SpannableStringBuilder text = new SpannableStringBuilder(gank.desc);
-            text.append("  (by:").append(gank.who).append(")");
-            text.setSpan(new ForegroundColorSpan(color), gank.desc.length(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            if (!TextUtils.isEmpty(gank.who)) {
+                text.append("  (by:").append(gank.who).append(")");
+                text.setSpan(new ForegroundColorSpan(color), gank.desc.length(), text.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+            }
             textView.setText(text);
         }
     }
