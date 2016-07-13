@@ -3,12 +3,20 @@ http://gank.io 的第三方 客户端
 
 # 下载 #
 妹纸1.0.0 Apk ：[Apk](https://github.com/LuckyJayce/MeiZhi/blob/master/raw/MeiZhi_1.0.0.apk?raw=true)   
+  
+![image](https://github.com/LuckyJayce/MeiZhi/blob/master/raw/ic_launcher.png)  
 
 # 简介 #
 
 数据内容来源于代码家的 http://gank.io     
 完全开源,项目中用了自己的mvchelper https://github.com/LuckyJayce/MVCHelper  
 ViewPagerIndicator https://github.com/LuckyJayce/ViewPagerIndicator  
+
+# 效果 #  
+![image](https://github.com/LuckyJayce/MeiZhi/blob/master/raw/p1.png)  
+![image](https://github.com/LuckyJayce/MeiZhi/blob/master/raw/p2.png)  
+![image](https://github.com/LuckyJayce/MeiZhi/blob/master/raw/p3.png)  
+
 
 # 联系方式和问题建议
 
