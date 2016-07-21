@@ -2,9 +2,7 @@ package com.shizhefei.meizhi.modle.datasource;
 
 import com.shizhefei.meizhi.modle.entry.Meizhi;
 import com.shizhefei.meizhi.modle.parser.MeizhiParser;
-import com.shizhefei.mvc.IAsyncDataSource;
-import com.shizhefei.mvc.RequestHandle;
-import com.shizhefei.mvc.ResponseSender;
+import com.shizhefei.mvc.IDataSource;
 import com.shizhefei.mvc.http.UrlBuilder;
 import com.shizhefei.mvc.http.okhttp.GetMethod;
 
@@ -15,30 +13,30 @@ import okhttp3.Response;
 /**
  * Created by LuckyJayce on 2016/7/11.
  */
-public class MeizhisDatasource implements IAsyncDataSource<List<Meizhi>> {
+public class MeizhisDataSource implements IDataSource<List<Meizhi>> {
     private int mPage = 1;
 
-    @Override
-    public RequestHandle refresh(ResponseSender<List<Meizhi>> sender) throws Exception {
-        return load(sender, 1);
-    }
-
-    @Override
-    public RequestHandle loadMore(ResponseSender<List<Meizhi>> sender) throws Exception {
-        return load(sender, mPage + 1);
-    }
-
-    private RequestHandle load(ResponseSender<List<Meizhi>> sender, final int page) {
+    private List<Meizhi> load(final int page) throws Exception {
         //        http://gank.io/api/data/Android/10/1
-        String url = new UrlBuilder("http://gank.io/api/data").sp("福利").sp("10").sp(page).build();
+        String url = new UrlBuilder("http://gank.io/api/data").sp("Android").sp("10").sp(page).build();
         GetMethod method = new GetMethod(url);
-        method.executeAsync(sender, new MeizhiParser<List<Meizhi>>() {
+        List<Meizhi> meizhis = method.executeSync(new MeizhiParser<List<Meizhi>>() {
             @Override
             protected void onParse(Response responses, List<Meizhi> meizhis) {
                 mPage = page;
             }
         });
-        return method;
+        return meizhis;
+    }
+
+    @Override
+    public List<Meizhi> refresh() throws Exception {
+        return load(1);
+    }
+
+    @Override
+    public List<Meizhi> loadMore() throws Exception {
+        return load(mPage + 1);
     }
 
     @Override

@@ -36,4 +36,8 @@ dependencies {
     compile rootProject.ext.dependencies["progress"]
     compile rootProject.ext.dependencies["viewpagerindicator"]
     compile rootProject.ext.dependencies["nineoldandroids"]
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["retrofit-rxjava"]
+    compile rootProject.ext.dependencies["retrofit-gson"]
 }

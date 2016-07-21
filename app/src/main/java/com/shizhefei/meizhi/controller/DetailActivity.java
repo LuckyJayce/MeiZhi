@@ -18,7 +18,7 @@ import com.bumptech.glide.Glide;
 import com.nineoldandroids.view.ViewPropertyAnimator;
 import com.shizhefei.meizhi.R;
 import com.shizhefei.meizhi.controller.common.BaseActivity;
-import com.shizhefei.meizhi.modle.datasource.GankDatasource;
+import com.shizhefei.meizhi.modle.datasource.GankRxDataSource;
 import com.shizhefei.meizhi.modle.entry.Gank;
 import com.shizhefei.meizhi.modle.entry.Meizhi;
 import com.shizhefei.meizhi.utils.DisplayUtils;
@@ -112,7 +112,8 @@ public class DetailActivity extends BaseActivity {
         String year = meizhi.publishedAt.substring(0, 4);
         String month = meizhi.publishedAt.substring(5, 7);
         String day = meizhi.publishedAt.substring(8, 10);
-        mvcHelper.setDataSource(new GankDatasource(year, month, day));
+        mvcHelper.setDataSource(new GankRxDataSource(year, month, day));
+//        mvcHelper.setDataSource(new GankDataSource(year, month, day));
         mvcHelper.setAdapter(detailPagerAdapter);
         mvcHelper.refresh();
 

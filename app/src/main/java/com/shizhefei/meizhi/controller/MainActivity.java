@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.shizhefei.meizhi.R;
 import com.shizhefei.meizhi.controller.common.BaseActivity;
-import com.shizhefei.meizhi.modle.datasource.MeizhisDatasource;
+import com.shizhefei.meizhi.modle.datasource.MeizhisAsyncDataSource;
 import com.shizhefei.meizhi.modle.entry.Meizhi;
 import com.shizhefei.meizhi.view.adapter.MeizhiAdapter;
 import com.shizhefei.mvc.MVCSwipeRefreshHelper;
@@ -48,13 +48,11 @@ public class MainActivity extends BaseActivity {
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.main_swipeRefreshLayout);
         mvcHelper = new MVCSwipeRefreshHelper<>(swipeRefreshLayout);
         mvcHelper.setAdapter(meizhiAdapter = new MeizhiAdapter());
-        mvcHelper.setDataSource(new MeizhisDatasource());
+        mvcHelper.setDataSource(new MeizhisAsyncDataSource());
         mvcHelper.refresh();
 
         meizhiAdapter.setOnItemClickListener(onItemClickListener);
-
     }
-
 
     @Override
     protected void onDestroy() {
