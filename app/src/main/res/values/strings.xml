@@ -14,5 +14,5 @@
     <string name="menu_github_about">关于作者</string>
     <string name="title_activity_about">AboutActivity</string>
 
-    <string name="introduce">数据内容来源于代码家的 http://gank.io \nLuckyJayce 完成 Android 端的开发和设计,\n我的 GitHub: https://github.com/LuckyJayce\n\n完全开源,项目中用了自己的mvchelper,ViewPagerIndicator等类库\n\n最佳的源代码,最佳的学习软件,如果你觉得不错,可以帮忙分享给你更多的朋友,这是我们最大的动力和支持,或者请我喝一杯咖啡（所谓的捐赠或打赏QAQ）,非常感谢！\n\n支付宝：luckyjayce@qq.com （长按可选中复制)</string>
+    <string name="introduce">数据内容来源于代码家的 http://gank.io \nLuckyJayce 完成 Android 端的开发和设计,\n我的 GitHub: https://github.com/LuckyJayce\n\n完全开源,项目中用了自己的mvchelper,ViewPagerIndicator等类库</string>
 </resources>
